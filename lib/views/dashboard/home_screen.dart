@@ -8,10 +8,7 @@ import 'package:test_drive/views/dashboard/child/home_playing_screen.dart';
 import 'package:test_drive/views/dashboard/child/home_upcoming_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:test_drive/service/response/status.dart';
-import 'package:test_drive/views/widgets/banner_not_found.dart';
 import 'package:test_drive/views/widgets/loading_widget.dart';
-
-import '../widgets/movie_horizontal_list_loading_widget.dart';
 
 class HomeScreen extends StatefulWidget{
   const HomeScreen({Key? key}) : super(key: key);
@@ -30,7 +27,7 @@ class _HomeScreen extends State<HomeScreen>{
   Color playingColor = Colors.red;
   Color upcomingColor = Colors.grey;
 
-  //View Model
+  //ViewModel
   final PopularViewModel viewModel = PopularViewModel();
 
   @override

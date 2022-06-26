@@ -6,4 +6,5 @@ class ApiEndPoints{
   final String imagePosterBaseUrl = "https://image.tmdb.org/t/p/w500";
 
   final String getPopularMovie = "/movie/popular";
+  final String getNowPlaying = "/movie/now_playing";
 }
