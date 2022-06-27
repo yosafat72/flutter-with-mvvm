@@ -80,7 +80,7 @@ class _HomePromotionScreen extends State<HomePromotionScreen>{
         child: Column(
           children: [
             SizedBox(
-              width: 250,
+              width: context.resources.dimension.size250,
               height: context.resources.dimension.size150,
               child: ClipRRect(
                 borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
@@ -94,10 +94,13 @@ class _HomePromotionScreen extends State<HomePromotionScreen>{
               alignment: Alignment.centerLeft,
               child: Text("${item?.title}",
                 style: const TextStyle(fontWeight: FontWeight.bold),
+                textAlign: TextAlign.left,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
             Container(
-              width: 250,
+              width: context.resources.dimension.size250,
               margin: const EdgeInsets.only(top: 5),
               padding: const EdgeInsets.only(left: 5, right: 5),
               child: Text("${item?.subTitle}",

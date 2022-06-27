@@ -21,4 +21,7 @@ class AppDimensions implements Dimensions{
 
   @override
   double get size35 => 35;
+
+  @override
+  double get size250 => 250;
 }
