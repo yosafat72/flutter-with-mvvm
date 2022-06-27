@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:test_drive/res/colors/app_colors.dart';
-import 'package:test_drive/res/dimentions/app_dimensions.dart';
 import 'package:test_drive/res/strings/indonesia_strings.dart';
 import 'package:test_drive/res/strings/strings.dart';
 
+import 'dimensions/app_dimensions.dart';
+
 class Resources{
-  BuildContext _context;
+  final BuildContext _context;
 
   Resources(this._context);
 
@@ -23,8 +24,8 @@ class Resources{
     return AppColors();
   }
 
-  AppDimentions get dimension{
-    return AppDimentions();
+  AppDimensions get dimension{
+    return AppDimensions();
   }
 
   static Resources of(BuildContext context){

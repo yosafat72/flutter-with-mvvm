@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:test_drive/model/movie.dart';
+import 'package:test_drive/model/movie/movie.dart';
 import 'package:test_drive/repository/playing/now_playing_repo.dart';
 import 'package:test_drive/utils/constanta.dart';
 

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:test_drive/repository/popular/popular_repo.dart';
 import 'package:test_drive/repository/popular/popular_repo_imp.dart';
 import 'package:test_drive/service/response/api_response.dart';
 
-import '../../model/movie.dart';
+import '../../model/movie/movie.dart';
 
 class PopularViewModel extends ChangeNotifier{
-  final _repository = PopularRepoImp();
+  final PopularRepo _repository = PopularRepoImp();
 
   ApiResponse<Movie> apiResponse = ApiResponse.loading();
 

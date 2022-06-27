@@ -1,10 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:test_drive/model/movie.dart';
+import 'package:test_drive/model/movie/movie.dart';
 import 'package:test_drive/res/app_context_extension.dart';
 import 'package:test_drive/service/remote/api_end_points.dart';
 import 'package:test_drive/view_model/popular/popular_vm.dart';
 import 'package:test_drive/views/dashboard/child/home_playing_screen.dart';
+import 'package:test_drive/views/dashboard/child/home_promotion_screen.dart';
 import 'package:test_drive/views/dashboard/child/home_upcoming_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:test_drive/service/response/status.dart';
@@ -32,14 +33,26 @@ class _HomeScreen extends State<HomeScreen>{
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          _observePopularMovie(),
-          _moviePlayingOrUpcoming(),
-          Expanded(child: _pageViewPlayingOrUpcoming())
-        ],
-      ),
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints viewportConstraints){
+        return SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              minHeight: viewportConstraints.maxHeight
+            ),
+            child: IntrinsicHeight(
+              child: Column(
+                children: [
+                  _observePopularMovie(),
+                  _moviePlayingOrUpcoming(),
+                  Expanded(child: _pageViewPlayingOrUpcoming()),
+                  const HomePromotionScreen()
+                ],
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 
@@ -52,7 +65,7 @@ class _HomeScreen extends State<HomeScreen>{
   Widget _pageViewPlayingOrUpcoming(){
     return SizedBox(
       width: double.infinity,
-      height: 300,
+      height: context.resources.dimension.size300,
       child: _pageView(),
     );
   }
@@ -85,7 +98,7 @@ class _HomeScreen extends State<HomeScreen>{
               _pageController.animateToPage(++pageChange, duration: const Duration(milliseconds: 250), curve: Curves.bounceInOut);
             }
           }, child: Text(
-            context.resources.strings.upcomming,
+            context.resources.strings.upcoming,
             style: TextStyle(color: upcomingColor),
           )
           ),

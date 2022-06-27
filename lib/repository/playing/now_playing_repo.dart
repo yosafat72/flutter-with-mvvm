@@ -1,4 +1,4 @@
-import '../../model/movie.dart';
+import '../../model/movie/movie.dart';
 
 class NowPlayingRepo{
 

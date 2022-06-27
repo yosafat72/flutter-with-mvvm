@@ -8,9 +8,12 @@ class IndonesiaStrings extends Strings{
   String get playing => "Sedang Tayang";
 
   @override
-  String get upcomming => "Yang Akan Datang";
+  String get upcoming => "Yang Akan Datang";
 
   @override
   String get karawang => "Karawang";
+
+  @override
+  String get pesan => "Pesan";
 
 }

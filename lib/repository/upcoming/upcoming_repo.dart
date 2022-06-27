@@ -1,7 +1,7 @@
 import '../../model/movie/movie.dart';
 
-class PopularRepo{
-  Future<Movie?> getPopular() async{
+class UpcomingRepo{
+  Future<Movie?> getUpcoming() async {
     return null;
   }
 }

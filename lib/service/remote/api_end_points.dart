@@ -7,4 +7,5 @@ class ApiEndPoints{
 
   final String getPopularMovie = "/movie/popular";
   final String getNowPlaying = "/movie/now_playing";
+  final String getUpcoming = "/movie/upcoming";
 }
